@@ -11,3 +11,5 @@ Se implementó un Dockerfile multi-stage para optimizar el empaquetado del backe
 Se integró Trivy para auditar la imagen final en busca de vulnerabilidades (CVEs).
 * **Resultado app/myapp.jar (Código):** 0 vulnerabilidades detectadas.
 * **Resultado OS (Alpine base):** 2 vulnerabilidades HIGH (gnutls, libpng) detectadas en la imagen base. Pendiente de parche mediante actualización de paquete o imagen upstream.
+
+
