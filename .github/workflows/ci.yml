@@ -1,0 +1,40 @@
+name: API Continuous Integration
+
+# Triggers
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+
+# Jobs
+jobs:
+  build-and-test:
+    name: Build, Test & Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      # Descargar código al servidor de GitHub
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      # Instalar y configurar Java 17
+      - name: ☕ Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # Compilar el proyecto y correr los tests
+      - name: 🔨 Build and Test with Maven
+        run: mvn clean verify
+
+      # Auditoría de seguridad con Trivy
+      - name: 🛡️ Run Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'table'
+          severity: 'CRITICAL,HIGH'
