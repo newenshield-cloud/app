@@ -4,6 +4,7 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-brightgreen)
 ![Docker Optimized](https://img.shields.io/badge/Docker-Multi--Stage-blue)
 ![Security Scan](https://img.shields.io/badge/Trivy-Audited-success)
+[![API Continuous Integration](https://github.com/newenshield-cloud/app/actions/workflows/ci.yml/badge.svg)](https://github.com/newenshield-cloud/app/actions/workflows/ci.yml)
 
 Backend Cloud-Native para el ecosistema NewenShield. Diseñado para ofrecer sincronización segura, gestión de bóvedas y servicios API RESTful bajo contenedores Docker optimizados.
 
