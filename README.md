@@ -76,3 +76,16 @@ El estado actual del proyecto está preparado para el despliegue local. El roadm
 
 - **CI/CD Pipeline**: Implementación de GitHub Actions para build, test y push a un Container Registry.
 - **Target Cloud Architecture**: Despliegue en AWS ECS Fargate con un Application Load Balancer y RDS PostgreSQL en subredes privadas.
+
+---
+
+## 🏗️ Cloud Infrastructure (IaC)
+
+Este proyecto está diseñado para ser desplegado en AWS utilizando **Terraform** (Infraestructura como Código). 
+
+Los cimientos de la red (disponibles en el directorio `terraform/`) incluyen:
+* **AWS VPC Module:** Configuración de red virtual aislada.
+* **Subnetting:** Diseño preparado para alta disponibilidad en múltiples Zonas de Disponibilidad (us-east-1a, us-east-1b).
+* **Security:** Arquitectura orientada a despliegues en subredes públicas con Security Groups estrictos (optimizado para Free Tier).
+
+*(Nota: El despliegue automático en AWS está pausado intencionalmente en este repositorio para optimizar el consumo de la Capa Gratuita, pero el código IaC es 100% funcional).*
